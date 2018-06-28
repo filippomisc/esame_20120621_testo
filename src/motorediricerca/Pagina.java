@@ -11,6 +11,8 @@ public class Pagina implements Comparable{
 	
 	private List<ElementoMultimediale> elementiMultimendiali;
 	
+	private List<ParolaChiave> paroleChiavi;
+	
 	
 	
 	
@@ -21,6 +23,7 @@ public class Pagina implements Comparable{
 		this.data = data;
 //		this.punteggio = 0;
 		elementiMultimendiali = new ArrayList<>();
+		paroleChiavi = new ArrayList<>();
 	}
 
 	public List<ElementoMultimediale> geteMultimendiali() {
@@ -76,10 +79,22 @@ public class Pagina implements Comparable{
 	}
 
 	public void aggiungiParolaChiave(String parola) throws ParolaChiaveDuplicataException{
+	
+	
+	ParolaChiave parolaChiave = new ParolaChiave(parola);
+	
+	if(paroleChiavi.contains(parolaChiave))
+		throw new ParolaChiaveDuplicataException();
+	else 
+		paroleChiavi.add(parolaChiave);
+	
+	
+	
+	
 	}
 	
 	public String[] elencoParoleChiave(){
-		return null;
+		return (String[]) paroleChiavi.toArray();
 	}
 
 	@Override

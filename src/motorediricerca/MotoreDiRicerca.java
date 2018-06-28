@@ -6,6 +6,11 @@ import java.util.*;
 public class MotoreDiRicerca {
 	
 	private List<Pagina> pagine;
+	
+	/*
+	 * se usiamo la mappa non possiamo avere 
+	 * piu collegamenti tra 2 pagine 
+	 */
 	private List<Collegamento> collegamenti;
 	
 
@@ -43,7 +48,7 @@ public class MotoreDiRicerca {
 	
 	public void aggiungiCollegamentoUscente(String indirizzoSorgente, String indirizzoDestinazione){
 		
-		//controllare nel metodo getPaginaByIndirizzo() che le pagine siano presenti nella lista
+		//controllare con il metodo getPaginaByIndirizzo() che le pagine siano presenti nella lista
 		//pagine
 		Pagina paginaSorgente = getPaginaByIndirizzo(indirizzoSorgente);
 		Pagina paginaDestinazione = getPaginaByIndirizzo(indirizzoDestinazione);
